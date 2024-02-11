@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import data from "./data";
 
 const Login = () => {
   const [teamName, setTeamName] = useState("");
@@ -7,7 +8,11 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/game", { state: { teamName } }); // Pass teamName as state
+    if (Object.keys(data).includes(teamName)) {
+      navigate("/game", { state: { teamName } }); // Pass teamName as state
+    } else {
+      alert("Enter valid Team Name");
+    }
   };
 
   return (
