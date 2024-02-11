@@ -22,9 +22,17 @@ const CorrectButtons = ({ teamName, expectedIndex, setExpectedIndex }) => {
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
     let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+
+    // Generate random RGB values
+    const r = Math.floor(Math.random() * 128); // Keep it in the darker range
+    const g = Math.floor(Math.random() * 128);
+    const b = Math.floor(Math.random() * 128);
+
+    // Convert RGB to hex
+    color += r.toString(16).padStart(2, "0");
+    color += g.toString(16).padStart(2, "0");
+    color += b.toString(16).padStart(2, "0");
+
     return color;
   };
 
