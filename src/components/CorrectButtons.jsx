@@ -49,7 +49,7 @@ const CorrectButtons = ({ teamName, expectedIndex, setExpectedIndex }) => {
         });
 
         // Add a delay before the next animation
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     };
 

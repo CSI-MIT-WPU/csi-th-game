@@ -24,12 +24,12 @@ const FillerButtons = ({ expectedIndex, setExpectedIndex }) => {
           animationControls[index].start({
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
-            transition: { duration: 2, ease: "linear" },
+            transition: { duration: 5, ease: "linear" },
           });
         });
 
         // Add a delay before the next animation
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 5000));
       }
     };
 
